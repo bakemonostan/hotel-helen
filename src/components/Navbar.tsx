@@ -13,6 +13,7 @@ import {
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  // const [isBannerVisible, setIsBannerVisible] = useState(true);
 
   return (
     <motion.nav
@@ -21,51 +22,64 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}>
       {/* Top bar with contact info */}
-      <div className="bg-amber-50 py-2 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm gap-2 md:gap-0">
-          <div className="flex flex-col sm:flex-row items-center gap-2 md:gap-6">
+      {/* {isBannerVisible && (
+        <motion.div 
+          className="bg-amber-50 py-2 px-4 md:px-8 relative"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          exit={{ opacity: 0, height: 0 }}
+          transition={{ duration: 0.3 }}>
+          <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm gap-2 md:gap-0">
+            <div className="flex flex-col sm:flex-row items-center gap-2 md:gap-6">
+              <motion.div
+                className="flex items-center gap-2 text-gray-600"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2 }}>
+                <Phone size={14} />
+                <span>(555) 123-4567</span>
+              </motion.div>
+              <motion.div
+                className="flex items-center gap-2 text-gray-600"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.3 }}>
+                <Mail size={14} />
+                <span>hello@hotelhelen.com</span>
+              </motion.div>
+            </div>
+
             <motion.div
-              className="flex items-center gap-2 text-gray-600"
+              className="flex items-center gap-3"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ delay: 0.2 }}>
-              <Phone size={14} />
-              <span>(555) 123-4567</span>
-            </motion.div>
-            <motion.div
-              className="flex items-center gap-2 text-gray-600"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.3 }}>
-              <Mail size={14} />
-              <span>hello@hotelhelen.com</span>
+              transition={{ delay: 0.4 }}>
+              <IconBrandFacebook
+                size={16}
+                className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
+              />
+              <IconBrandTwitter
+                size={16}
+                className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
+              />
+              <IconBrandInstagram
+                size={16}
+                className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
+              />
+              <IconBrandLinkedin
+                size={16}
+                className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
+              />
             </motion.div>
           </div>
-
-          <motion.div
-            className="flex items-center gap-3"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}>
-            <IconBrandFacebook
-              size={16}
-              className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
-            />
-            <IconBrandTwitter
-              size={16}
-              className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
-            />
-            <IconBrandInstagram
-              size={16}
-              className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
-            />
-            <IconBrandLinkedin
-              size={16}
-              className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
-            />
-          </motion.div>
-        </div>
-      </div>
+          
+          <button
+            onClick={() => setIsBannerVisible(false)}
+            className="absolute top-2 right-4 md:right-8 p-1 text-gray-500 hover:text-gray-700 transition-colors">
+            <X size={16} />
+          </button>
+        </motion.div>
+      )} */}
 
       {/* Main navigation */}
       <div className="py-4 px-4 md:px-8">
