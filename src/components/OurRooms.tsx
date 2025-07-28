@@ -45,6 +45,31 @@ const RoomContent = ({ roomType }: { roomType: string }) => {
                 </ul>
               </div>
             </div>
+
+            {/* Room Images */}
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="relative overflow-hidden rounded-xl h-48 md:h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80"
+                  alt={`${roomType} interior`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-xl h-48 md:h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                  alt={`${roomType} bathroom`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="relative overflow-hidden rounded-xl h-48 md:h-64">
+                <img
+                  src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                  alt={`${roomType} view`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </div>
           </div>
         );
       })}

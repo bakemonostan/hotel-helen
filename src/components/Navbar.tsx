@@ -2,18 +2,14 @@
 
 import { motion } from "motion/react";
 import { useState } from "react";
-import {
-  Phone,
-  Mail,
-  Facebook,
-  Twitter,
-  Instagram,
-  Linkedin,
-  Search,
-  Menu,
-  X,
-} from "lucide-react";
+import { Phone, Mail, Search, Menu, X } from "lucide-react";
 import { Input } from "@/components/ui/input";
+import {
+  IconBrandFacebook,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandTwitter,
+} from "@tabler/icons-react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -26,16 +22,15 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: "easeOut" }}>
       {/* Top bar with contact info */}
       <div className="bg-amber-50 py-2 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-sm">
-          <div className="flex items-center gap-2 md:gap-6">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm gap-2 md:gap-0">
+          <div className="flex flex-col sm:flex-row items-center gap-2 md:gap-6">
             <motion.div
               className="flex items-center gap-2 text-gray-600"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}>
               <Phone size={14} />
-              <span className="hidden sm:inline">(555) 123-4567</span>
-              <span className="sm:hidden">(555) 123-4567</span>
+              <span>(555) 123-4567</span>
             </motion.div>
             <motion.div
               className="flex items-center gap-2 text-gray-600"
@@ -43,8 +38,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}>
               <Mail size={14} />
-              <span className="hidden md:inline">hello@hotelhelen.com</span>
-              <span className="md:hidden">hello@hotelhelen.com</span>
+              <span>hello@hotelhelen.com</span>
             </motion.div>
           </div>
 
@@ -53,19 +47,19 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}>
-            <Facebook
+            <IconBrandFacebook
               size={16}
               className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
             />
-            <Twitter
+            <IconBrandTwitter
               size={16}
               className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
             />
-            <Instagram
+            <IconBrandInstagram
               size={16}
               className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
             />
-            <Linkedin
+            <IconBrandLinkedin
               size={16}
               className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors"
             />
