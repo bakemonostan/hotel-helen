@@ -15,6 +15,14 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   // const [isBannerVisible, setIsBannerVisible] = useState(true);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <motion.nav
       className="bg-white/95 backdrop-blur-sm border-b border-gray-100 sticky top-0 z-50"
@@ -98,50 +106,38 @@ export default function Navbar() {
             </h1>
           </motion.div>
 
-          {/* Desktop Navigation Links */}
+          {/* Desktop Navigation Links - Centered */}
           <motion.div
-            className="hidden md:flex items-center space-x-8"
+            className="hidden md:flex items-center space-x-8 absolute left-1/2 transform -translate-x-1/2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}>
-            {["Home", "Explore", "Rooms", "About", "Contact"].map(
-              (item, index) => (
-                <motion.a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="text-gray-700 hover:text-amber-600 font-medium transition-colors duration-300 relative group"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 + index * 0.1 }}>
-                  {item}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-600 group-hover:w-full transition-all duration-300"></span>
-                </motion.a>
-              )
-            )}
+            {[
+              { name: "Home", id: "home" },
+              { name: "Explore", id: "explore" },
+              { name: "Rooms", id: "rooms" },
+              { name: "Services", id: "services" },
+              { name: "Contact", id: "contact" },
+            ].map((item, index) => (
+              <motion.button
+                key={item.name}
+                onClick={() => scrollToSection(item.id)}
+                className="text-gray-700 hover:text-amber-600 font-medium transition-colors duration-300 relative group"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4 + index * 0.1 }}>
+                {item.name}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-amber-600 group-hover:w-full transition-all duration-300"></span>
+              </motion.button>
+            ))}
           </motion.div>
 
-          {/* Search and Mobile Menu */}
+          {/* Mobile Menu Button */}
           <motion.div
-            className="flex items-center gap-4"
+            className="flex items-center"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.5, duration: 0.8 }}>
-            <div className="relative hidden lg:block">
-              <Input
-                placeholder="Search here..."
-                className="w-64 pr-10 bg-gray-50 border-gray-200 focus:border-amber-600"
-              />
-              <Search
-                size={18}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400"
-              />
-            </div>
-            <Search
-              size={20}
-              className="text-gray-600 hover:text-amber-600 cursor-pointer transition-colors lg:hidden"
-            />
-
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="md:hidden p-2 text-gray-600 hover:text-amber-600 transition-colors">
@@ -158,21 +154,20 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden mt-4 pb-4 border-t border-gray-100">
             <div className="pt-4 space-y-4">
-              {["Home", "Explore", "Rooms", "About", "Contact"].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="block text-gray-700 hover:text-amber-600 font-medium transition-colors duration-300 py-2"
-                  onClick={() => setIsMobileMenuOpen(false)}>
-                  {item}
-                </a>
+              {[
+                { name: "Home", id: "home" },
+                { name: "Explore", id: "explore" },
+                { name: "Rooms", id: "rooms" },
+                { name: "Services", id: "services" },
+                { name: "Contact", id: "contact" },
+              ].map((item) => (
+                <button
+                  key={item.name}
+                  onClick={() => scrollToSection(item.id)}
+                  className="block text-gray-700 hover:text-amber-600 font-medium transition-colors duration-300 py-2 w-full text-left">
+                  {item.name}
+                </button>
               ))}
-              <div className="pt-4">
-                <Input
-                  placeholder="Search here..."
-                  className="w-full bg-gray-50 border-gray-200 focus:border-amber-600"
-                />
-              </div>
             </div>
           </motion.div>
         )}
