@@ -32,27 +32,27 @@ export default function ExploreSection() {
   ];
 
   return (
-    <section ref={ref} className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section
+      ref={ref}
+      className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="text-center max-w-4xl mx-auto mb-16">
+        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
           <motion.h2
-            className="text-4xl md:text-5xl font-bold text-gray-800 mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+            viewport={{ once: true }}>
             Hotel Helen: Your Gateway <br />
             <span className="text-amber-600">To Serenity</span>
           </motion.h2>
 
           <motion.p
-            className="text-lg text-gray-600 leading-relaxed mb-8"
+            className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8 px-4"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            viewport={{ once: true }}
-          >
+            viewport={{ once: true }}>
             Welcome to Hotel Helen, where comfort meets tranquility. Nestled in
             the heart of a bustling city, our hotel offers a peaceful retreat
             for both business and leisure travelers. With modern amenities and a
@@ -64,12 +64,11 @@ export default function ExploreSection() {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 text-lg font-semibold group transition-all duration-300">
+            viewport={{ once: true }}>
+            <Button className="bg-amber-600 hover:bg-amber-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold group transition-all duration-300">
               Read About Us
               <ArrowRight
-                size={20}
+                size={18}
                 className="ml-2 group-hover:translate-x-1 transition-transform"
               />
             </Button>
@@ -78,31 +77,31 @@ export default function ExploreSection() {
 
         {/* Focus Cards Section */}
         <motion.div
-          className="mb-16"
+          className="mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-800 mb-4">
+          viewport={{ once: true }}>
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
               Explore Our Amenities
             </h3>
-            <p className="text-gray-600 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto px-4">
               Discover the exceptional services and facilities that make Hotel
               Hotel Helen your perfect choice for an unforgettable stay.
             </p>
           </div>
-          <FocusCards cards={focusCards} />
+          <div>
+            <FocusCards cards={focusCards} />
+          </div>
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-20"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-20"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
+          viewport={{ once: true }}>
           {[
             {
               icon: Star,
@@ -127,37 +126,44 @@ export default function ExploreSection() {
           ].map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="text-center group p-6 rounded-xl hover:bg-amber-50 transition-colors duration-300"
+              className="text-center group p-4 sm:p-6 rounded-xl hover:bg-amber-50 transition-colors duration-300"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-            >
+              whileHover={{ y: -5 }}>
               <motion.div
-                className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-4 group-hover:bg-amber-200 transition-colors"
+                className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-amber-100 rounded-full mb-3 sm:mb-4 group-hover:bg-amber-200 transition-colors"
                 whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.2 }}
-              >
-                <feature.icon size={32} className="text-amber-600" />
+                transition={{ duration: 0.2 }}>
+                <feature.icon
+                  size={24}
+                  className="sm:w-8 sm:h-8 text-amber-600"
+                />
               </motion.div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-2">
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
                 {feature.title}
               </h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <p className="text-sm sm:text-base text-gray-600">
+                {feature.description}
+              </p>
             </motion.div>
           ))}
         </motion.div>
       </div>
-      <div className="h-screen">
+
+      {/* Layout Grid - Hidden on mobile for better performance */}
+      <div className="hidden lg:block h-screen">
         <LayoutGrid
           cards={[
             {
               id: 1,
               content: (
                 <div className="text-white">
-                  <h1 className="text-4xl font-bold mb-4">Luxury Comfort</h1>
-                  <p className="text-lg opacity-90">
+                  <h1 className="text-2xl sm:text-4xl font-bold mb-4">
+                    Luxury Comfort
+                  </h1>
+                  <p className="text-base sm:text-lg opacity-90">
                     Experience unmatched comfort in our premium rooms with
                     elegant furnishing, premium bedding, and breathtaking city
                     views that redefine luxury.
@@ -172,8 +178,10 @@ export default function ExploreSection() {
               id: 2,
               content: (
                 <div className="text-white">
-                  <h1 className="text-4xl font-bold mb-4">Award Winning</h1>
-                  <p className="text-lg opacity-90">
+                  <h1 className="text-2xl sm:text-4xl font-bold mb-4">
+                    Award Winning
+                  </h1>
+                  <p className="text-base sm:text-lg opacity-90">
                     Recognized globally for excellence in hospitality services,
                     culinary experiences, and sustainable tourism practices.
                   </p>
@@ -187,8 +195,10 @@ export default function ExploreSection() {
               id: 3,
               content: (
                 <div className="text-white">
-                  <h1 className="text-4xl font-bold mb-4">Personalized Care</h1>
-                  <p className="text-lg opacity-90">
+                  <h1 className="text-2xl sm:text-4xl font-bold mb-4">
+                    Personalized Care
+                  </h1>
+                  <p className="text-base sm:text-lg opacity-90">
                     Our dedicated concierge team ensures every detail of your
                     stay is perfectly tailored to your preferences and needs.
                   </p>
@@ -202,8 +212,10 @@ export default function ExploreSection() {
               id: 4,
               content: (
                 <div className="text-white">
-                  <h1 className="text-4xl font-bold mb-4">Dining Excellence</h1>
-                  <p className="text-lg opacity-90">
+                  <h1 className="text-2xl sm:text-4xl font-bold mb-4">
+                    Dining Excellence
+                  </h1>
+                  <p className="text-base sm:text-lg opacity-90">
                     Savor world-class cuisine at our signature restaurants,
                     featuring locally sourced ingredients and innovative
                     culinary artistry.
@@ -218,8 +230,10 @@ export default function ExploreSection() {
               id: 5,
               content: (
                 <div className="text-white">
-                  <h1 className="text-4xl font-bold mb-4">Wellness & Spa</h1>
-                  <p className="text-lg opacity-90">
+                  <h1 className="text-2xl sm:text-4xl font-bold mb-4">
+                    Wellness & Spa
+                  </h1>
+                  <p className="text-base sm:text-lg opacity-90">
                     Rejuvenate your body and soul at our world-class spa
                     facility with therapeutic treatments and state-of-the-art
                     wellness amenities.
@@ -234,8 +248,10 @@ export default function ExploreSection() {
               id: 6,
               content: (
                 <div className="text-white">
-                  <h1 className="text-4xl font-bold mb-4">Pool & Recreation</h1>
-                  <p className="text-lg opacity-90">
+                  <h1 className="text-2xl sm:text-4xl font-bold mb-4">
+                    Pool & Recreation
+                  </h1>
+                  <p className="text-base sm:text-lg opacity-90">
                     Dive into luxury at our stunning infinity pool and
                     recreation deck, perfect for relaxation and entertainment
                     throughout your stay.

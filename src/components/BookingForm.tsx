@@ -20,23 +20,21 @@ export default function BookingForm() {
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ delay: 0.5, duration: 0.8 }}
-      className="w-full max-w-md"
-    >
+      className="w-full max-w-sm sm:max-w-md">
       <Card className="bg-white/95 backdrop-blur-sm shadow-2xl border-0">
         <CardHeader className="text-center pb-4">
-          <CardTitle className="text-2xl text-gray-800 font-bold">
+          <CardTitle className="text-xl sm:text-2xl text-gray-800 font-bold">
             Check Availability
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="space-y-5">
+        <CardContent className="space-y-4 sm:space-y-5">
           {/* Check-in Date */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
-            className="space-y-2"
-          >
+            className="space-y-2">
             <Label className="text-sm font-medium text-gray-700 flex items-center gap-2">
               <Calendar size={16} />
               CHECK-IN
@@ -53,8 +51,7 @@ export default function BookingForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
-            className="space-y-2"
-          >
+            className="space-y-2">
             <Label className="text-sm font-medium text-gray-700 flex items-center gap-2">
               <Calendar size={16} />
               CHECK-OUT
@@ -71,8 +68,7 @@ export default function BookingForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
-            className="space-y-2"
-          >
+            className="space-y-2">
             <Label className="text-sm font-medium text-gray-700 flex items-center gap-2">
               <Bed size={16} />
               ROOMS
@@ -96,8 +92,7 @@ export default function BookingForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.0 }}
-            className="space-y-2"
-          >
+            className="space-y-2">
             <Label className="text-sm font-medium text-gray-700 flex items-center gap-2">
               <Users size={16} />
               GUESTS
@@ -121,12 +116,11 @@ export default function BookingForm() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.1 }}
-            className="pt-4"
-          >
-            <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-6 text-lg font-semibold group transition-all duration-300 transform hover:scale-105">
+            className="pt-4">
+            <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white py-4 sm:py-6 text-base sm:text-lg font-semibold group transition-all duration-300 transform hover:scale-105">
               Check Availability
               <ArrowRight
-                size={20}
+                size={18}
                 className="ml-2 group-hover:translate-x-1 transition-transform"
               />
             </Button>
