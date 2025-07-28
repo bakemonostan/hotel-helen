@@ -120,7 +120,7 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   },
                 }}
                 key={"card" + index}
-                className="rounded-3xl last:pr-[5%] md:last:pr-[33%]">
+                className="rounded-3xl last:pr-[5%] md:last:pr-[33%] D">
                 {item}
               </motion.div>
             ))}
@@ -128,16 +128,16 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
         </div>
         <div className="mr-10 flex justify-end gap-2">
           <button
-            className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+            className="relative z-40 flex size-16 cursor-pointer items-center justify-center rounded-full bg-amber-600 disabled:opacity-50"
             onClick={scrollLeft}
             disabled={!canScrollLeft}>
-            <IconArrowNarrowLeft className="h-6 w-6 text-gray-500" />
+            <IconArrowNarrowLeft className="size-8 text-white" />
           </button>
           <button
-            className="relative z-40 flex h-10 w-10 items-center justify-center rounded-full bg-gray-100 disabled:opacity-50"
+            className="relative z-40 flex size-16 cursor-pointer items-center justify-center rounded-full bg-amber-600 disabled:opacity-50"
             onClick={scrollRight}
             disabled={!canScrollRight}>
-            <IconArrowNarrowRight className="h-6 w-6 text-gray-500" />
+            <IconArrowNarrowRight className="size-8 text-white" />
           </button>
         </div>
       </div>
@@ -247,7 +247,7 @@ export const Card = ({
           src={card.src}
           alt={card.title}
           fill
-          className="absolute inset-0 z-10 object-cover"
+          className="absolute inset-0 z-10 object-cover cursor-pointer hover:scale-105 transition-all duration-300"
         />
       </motion.button>
     </>

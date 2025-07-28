@@ -2,7 +2,7 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { MapPin, Phone, Mail, ArrowRight, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
