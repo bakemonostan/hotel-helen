@@ -2,18 +2,10 @@
 
 import { motion } from "motion/react";
 import { useState } from "react";
-import { Phone, Mail, Search, Menu, X } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import {
-  IconBrandFacebook,
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconBrandTwitter,
-} from "@tabler/icons-react";
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  // const [isBannerVisible, setIsBannerVisible] = useState(true);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 export default function HeroSection() {
   const ref = useRef(null);
@@ -25,8 +26,11 @@ export default function HeroSection() {
         className="absolute inset-0 w-full h-full">
         <div className="absolute inset-0 bg-gradient-to-b from-amber-300/40 via-amber-200/30 to-amber-100/10 z-10"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-black/40 via-black/25 to-black/15 z-10"></div>
-        <img
-          src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+        <Image
+          width={1000}
+          height={1000}
+          quality={100}
+          src="/outside-view-two.jpg"
           alt="Luxury hotel room"
           className="w-full h-full object-cover"
         />
