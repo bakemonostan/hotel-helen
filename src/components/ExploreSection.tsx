@@ -36,45 +36,6 @@ export default function ExploreSection() {
       ref={ref}
       className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="text-center max-w-4xl mx-auto mb-12 sm:mb-16">
-          <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}>
-            Hotel Helen: Your Gateway <br />
-            <span className="text-amber-600">To Serenity</span>
-          </motion.h2>
-
-          <motion.p
-            className="text-base sm:text-lg text-gray-600 leading-relaxed mb-6 sm:mb-8 px-4"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            viewport={{ once: true }}>
-            Welcome to Hotel Helen, where comfort meets tranquility. Nestled in
-            the heart of a bustling city, our hotel offers a peaceful retreat
-            for both business and leisure travelers. With modern amenities and a
-            warm, welcoming atmosphere, we strive to make your stay with us
-            unforgettable.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.8 }}
-            viewport={{ once: true }}>
-            <Button className="bg-amber-600 hover:bg-amber-700 text-white px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold group transition-all duration-300">
-              Read About Us
-              <ArrowRight
-                size={18}
-                className="ml-2 group-hover:translate-x-1 transition-transform"
-              />
-            </Button>
-          </motion.div>
-        </div>
-
         {/* Focus Cards Section */}
         <motion.div
           className="mb-12 sm:mb-16"
@@ -94,6 +55,86 @@ export default function ExploreSection() {
           <div>
             <FocusCards cards={focusCards} />
           </div>
+        </motion.div>
+
+        {/* Location Perks Section */}
+        <motion.div
+          className="mb-12 sm:mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}>
+          <div className="text-center mb-8 sm:mb-12">
+            <h3 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-3 sm:mb-4">
+              Location <span className="text-amber-600">Perks</span>
+            </h3>
+            <p className="text-gray-600 max-w-2xl mx-auto px-4">
+              Hotel Helen is perfectly located for both relaxation and
+              accessibility
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <motion.div
+              className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300"
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}>
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mr-4">
+                  <span className="text-2xl">🏖️</span>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-800">
+                  25 minutes from the beach
+                </h4>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Enjoy the fresh coastal breeze and unwind just a short drive
+                away from some of Lekki&apos;s serene beach fronts. Ideal for
+                morning walks, evening sunsets, and spontaneous beach days.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="bg-white rounded-xl p-6 sm:p-8 shadow-sm border border-gray-100 hover:shadow-lg transition-all duration-300"
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}>
+              <div className="flex items-center mb-4">
+                <div className="w-12 h-12 bg-amber-100 rounded-lg flex items-center justify-center mr-4">
+                  <span className="text-2xl">✈️</span>
+                </div>
+                <h4 className="text-xl font-semibold text-gray-800">
+                  50 minutes to the airport
+                </h4>
+              </div>
+              <p className="text-gray-600 leading-relaxed">
+                Whether you&apos;re flying in or hosting guests from out of
+                town, Hotel Helen is conveniently positioned for easy airport
+                access via the Lekki-Epe Expressway.
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            className="mt-8 text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6, duration: 0.6 }}
+            viewport={{ once: true }}>
+            <p className="text-lg text-gray-700 mb-6 leading-relaxed">
+              Our location provides the perfect balance — a peaceful escape with
+              urban convenience.
+            </p>
+            <p className="text-lg text-gray-800 font-medium">
+              Book your stay today and experience Lekki&apos;s charm with
+              comfort, convenience, and class — only at Hotel Helen
+            </p>
+          </motion.div>
         </motion.div>
 
         <motion.div
