@@ -80,39 +80,23 @@ const RoomContent = ({ roomType }: { roomType: string }) => {
 const roomData = [
   {
     src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-    title: "Deluxe Suite",
-    category: "Luxury",
+    title: "Spacious Restrooms",
     content: <RoomContent roomType="Deluxe Suite" />,
   },
   {
     src: "https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    title: "Executive Room",
-    category: "Business",
+    title: "King-size beds",
     content: <RoomContent roomType="Executive Room" />,
   },
   {
     src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    title: "Family Suite",
-    category: "Family",
+    title: "Flat-screen TVs",
     content: <RoomContent roomType="Family Suite" />,
   },
   {
     src: "https://images.unsplash.com/photo-1578774204375-826dc5d996ed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
-    title: "Presidential Suite",
-    category: "Ultimate Luxury",
-    content: <RoomContent roomType="Presidential Suite" />,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
-    title: "Garden View Room",
-    category: "Relaxation",
-    content: <RoomContent roomType="Garden View Room" />,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?q=80&w=3556&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    title: "Honeymoon Suite",
-    category: "Romance",
-    content: <RoomContent roomType="Honeymoon Suite" />,
+    title: " Fridge",
+    content: <RoomContent roomType="Deluxe Suite" />,
   },
 ];
 
