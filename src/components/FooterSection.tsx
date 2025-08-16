@@ -34,9 +34,8 @@ export default function FooterSection() {
               </h3>
             </div>
             <p className="text-gray-300 leading-relaxed">
-              A peaceful retreat in the heart of the city, offering luxury
-              accommodations and exceptional service for discerning travelers
-              seeking comfort and elegance.
+              A luxury retreat in the heart of Lekki Phase 1, offering comfort
+              and elegance for both business and leisure travelers.
             </p>
           </motion.div>
 
@@ -87,9 +86,9 @@ export default function FooterSection() {
                   className="text-amber-600 mt-1 flex-shrink-0"
                 />
                 <p className="text-gray-300 text-sm">
-                  123 Luxury Avenue, Downtown District
+                  36, Omorinre Johnson Street,
                   <br />
-                  City Center, CC 12345
+                  Lekki Phase 1, Lagos
                 </p>
               </div>
               <div className="flex items-center gap-3">
@@ -97,14 +96,16 @@ export default function FooterSection() {
                   size={18}
                   className="text-amber-600 flex-shrink-0"
                 />
-                <p className="text-gray-300 text-sm">(555) 123-4567</p>
+                <p className="text-gray-300 text-sm"> +234-805-536-9750 </p>
               </div>
               <div className="flex items-center gap-3">
                 <Mail
                   size={18}
                   className="text-amber-600 flex-shrink-0"
                 />
-                <p className="text-gray-300 text-sm">hello@hotelhelen.com</p>
+                <p className="text-gray-300 text-sm">
+                  hotelheleninfo@gmail.com
+                </p>
               </div>
             </div>
           </motion.div>
