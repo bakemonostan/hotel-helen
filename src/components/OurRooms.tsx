@@ -136,6 +136,118 @@ export default function OurRooms() {
           viewport={{ once: true }}>
           <Carousel items={cards} />
         </motion.div>
+
+        {/* Room Options Section */}
+        <motion.div
+          className="mt-16 md:mt-24"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+          viewport={{ once: true }}>
+          <div className="text-center mb-12 md:mb-16">
+            <h3 className="text-2xl md:text-4xl font-bold text-gray-800 mb-6">
+              Room <span className="text-amber-600">Options</span>
+            </h3>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              Choose from our thoughtfully designed accommodations, each crafted
+              to provide the perfect blend of comfort, elegance, and
+              functionality for your stay.
+            </p>
+          </div>
+
+          <div className="bg-white rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100">
+            <motion.div
+              className="text-center mb-8 md:mb-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.6 }}
+              viewport={{ once: true }}>
+              <h4 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+                Executive Suites
+              </h4>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Designed for guests who desire extra space and luxury.
+                Experience unparalleled comfort with our premium amenities and
+                sophisticated design.
+              </p>
+            </motion.div>
+
+            <motion.div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              viewport={{ once: true }}>
+              {[
+                {
+                  icon: "🏠",
+                  title: "Private Balcony",
+                  description:
+                    "Enjoy breathtaking views and fresh air from your own private outdoor space",
+                },
+                {
+                  icon: "📐",
+                  title: "Spacious Layout",
+                  description:
+                    "Generous room dimensions providing comfort and freedom to move around",
+                },
+                {
+                  icon: "🛏️",
+                  title: "King-size Bed",
+                  description:
+                    "Premium bedding with luxurious linens for the ultimate sleep experience",
+                },
+                {
+                  icon: "🛋️",
+                  title: "Lounge Room",
+                  description:
+                    "Separate living area perfect for relaxation and entertainment",
+                },
+                {
+                  icon: "📺",
+                  title: "Flat-screen TV",
+                  description:
+                    "High-definition entertainment with premium channel selection",
+                },
+                {
+                  icon: "🧊",
+                  title: "Fridge",
+                  description:
+                    "Convenient in-room refrigeration for your refreshments and snacks",
+                },
+              ].map((amenity, index) => (
+                <motion.div
+                  key={amenity.title}
+                  className="text-center p-6 rounded-xl hover:bg-amber-50 transition-colors duration-300 border border-gray-100"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 1 + index * 0.1, duration: 0.5 }}
+                  viewport={{ once: true }}
+                  whileHover={{ y: -5 }}>
+                  <div className="text-4xl mb-4">{amenity.icon}</div>
+                  <h5 className="text-lg font-semibold text-gray-800 mb-2">
+                    {amenity.title}
+                  </h5>
+                  <p className="text-sm text-gray-600 leading-relaxed">
+                    {amenity.description}
+                  </p>
+                </motion.div>
+              ))}
+            </motion.div>
+
+            <motion.div
+              className="text-center mt-8 md:mt-12"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.6, duration: 0.6 }}
+              viewport={{ once: true }}>
+              <p className="text-lg text-gray-700 font-medium">
+                Every detail has been thoughtfully considered to ensure your
+                stay exceeds expectations and creates lasting memories.
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
