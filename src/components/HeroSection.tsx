@@ -55,7 +55,7 @@ export default function HeroSection() {
                   className="md:w-5 md:h-5"
                 />
                 <span className="text-base md:text-lg">
-                  Located in Paradise
+                  Located in Lekki Phase 1
                 </span>
               </motion.div>
 
@@ -82,8 +82,11 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}>
-                Experience luxury redefined in our tranquil oasis where comfort
-                meets elegance, creating memories that last a lifetime.
+                Nestled in the vibrant and upscale Lekki Phase 1, Hotel Helen
+                offers the perfect blend of comfort, privacy, and convenience.
+                Whether you&apos;re in town for business or a relaxing getaway,
+                our well-appointed rooms and inviting spaces promise an
+                exceptional stay.
               </motion.p>
             </motion.div>
 
