@@ -2,22 +2,14 @@
 
 import React from "react";
 import { motion } from "motion/react";
-import { MapPin, Phone, Mail, Send } from "lucide-react";
+import { MapPin, Phone, Mail, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  IconBrandFacebook,
-  IconBrandTwitter,
-  IconBrandInstagram,
-  IconBrandLinkedin,
-  IconBrandYoutube,
-} from "@tabler/icons-react";
 
 export default function FooterSection() {
   return (
     <footer className="bg-gray-900 text-white py-16 md:py-24">
       <div className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {/* Hotel Description */}
           <motion.div
             className="lg:col-span-1"
@@ -39,36 +31,32 @@ export default function FooterSection() {
             </p>
           </motion.div>
 
-          {/* Newsletter Signup */}
+          {/* Book Now Section */}
           <motion.div
             className="lg:col-span-1"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
             viewport={{ once: true }}>
-            <h4 className="text-lg font-semibold mb-4">Join Our Newsletter</h4>
-            <div className="space-y-3">
-              <Input
-                placeholder="First Name"
-                className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-amber-600"
+            <h4 className="text-lg font-semibold mb-4">Ready to Book?</h4>
+            <p className="text-gray-300 text-sm mb-6">
+              Experience luxury and comfort at Hotel Helen. Book your stay today
+              and enjoy our exceptional service.
+            </p>
+            <Button
+              onClick={() =>
+                window.open(
+                  "https://wa.me/2348055369750?text=Hi! I would like to book a room at Hotel Helen.",
+                  "_blank"
+                )
+              }
+              className="bg-amber-600 hover:bg-amber-700 text-white group transition-all duration-300 transform hover:scale-105">
+              Book Now
+              <ArrowRight
+                size={16}
+                className="ml-2 group-hover:translate-x-1 transition-transform"
               />
-              <Input
-                placeholder="Last Name"
-                className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-amber-600"
-              />
-              <Input
-                placeholder="Email Address"
-                type="email"
-                className="bg-gray-800 border-gray-700 text-white placeholder-gray-400 focus:border-amber-600"
-              />
-              <Button className="w-full bg-amber-600 hover:bg-amber-700 text-white group">
-                Subscribe Newsletter
-                <Send
-                  size={16}
-                  className="ml-2 group-hover:translate-x-1 transition-transform"
-                />
-              </Button>
-            </div>
+            </Button>
           </motion.div>
 
           {/* Contact Info */}
@@ -107,38 +95,6 @@ export default function FooterSection() {
                   hotelheleninfo@gmail.com
                 </p>
               </div>
-            </div>
-          </motion.div>
-
-          {/* Social Links */}
-          <motion.div
-            className="lg:col-span-1"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6, duration: 0.8 }}
-            viewport={{ once: true }}>
-            <h4 className="text-lg font-semibold mb-4">Social Share</h4>
-            <div className="flex gap-3">
-              <IconBrandFacebook
-                size={20}
-                className="text-gray-400 hover:text-amber-600 cursor-pointer transition-colors"
-              />
-              <IconBrandTwitter
-                size={20}
-                className="text-gray-400 hover:text-amber-600 cursor-pointer transition-colors"
-              />
-              <IconBrandInstagram
-                size={20}
-                className="text-gray-400 hover:text-amber-600 cursor-pointer transition-colors"
-              />
-              <IconBrandLinkedin
-                size={20}
-                className="text-gray-400 hover:text-amber-600 cursor-pointer transition-colors"
-              />
-              <IconBrandYoutube
-                size={20}
-                className="text-gray-400 hover:text-amber-600 cursor-pointer transition-colors"
-              />
             </div>
           </motion.div>
         </div>
