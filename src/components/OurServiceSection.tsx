@@ -44,9 +44,9 @@ const services = [
   // },
   {
     icon: Mic,
-    title: "Event Spaces",
+    title: "Roof Top Space",
     description:
-      "Host your events in our versatile spaces equipped with modern audiovisual technology.",
+      "Relax and unwind at our rooftop space with panoramic city views and comfortable lounging areas.",
     color: "bg-green-50 text-green-600",
   },
   {
