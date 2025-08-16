@@ -97,7 +97,7 @@ export default function ExploreSection() {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mt-12 sm:mt-20"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mt-12 sm:mt-20"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -108,11 +108,7 @@ export default function ExploreSection() {
               title: "Luxury Comfort",
               description: "Experience unmatched comfort in our premium rooms",
             },
-            {
-              icon: Award,
-              title: "Award Winning",
-              description: "Recognized for excellence in hospitality services",
-            },
+
             {
               icon: Heart,
               title: "Personalized Care",
@@ -126,7 +122,7 @@ export default function ExploreSection() {
           ].map((feature, index) => (
             <motion.div
               key={feature.title}
-              className="text-center group p-4 sm:p-6 rounded-xl hover:bg-amber-50 transition-colors duration-300"
+              className="text-center group p-4 sm:p-6 rounded-xl hover:bg-amber-50 transition-colors duration-300 border border-gray-200"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.2 }}
