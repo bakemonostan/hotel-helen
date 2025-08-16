@@ -107,7 +107,8 @@ export default function FooterSection() {
           transition={{ delay: 0.8, duration: 0.8 }}
           viewport={{ once: true }}>
           <p className="text-gray-400 text-sm">
-            Copyright 2024 Hotel Helen. All rights reserved.
+            Copyright {new Date().getFullYear()} Hotel Helen. All rights
+            reserved.
           </p>
         </motion.div>
       </div>
