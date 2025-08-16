@@ -95,7 +95,14 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
               className="flex justify-center">
-              <Button className="bg-amber-600 hover:bg-amber-700 text-white px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-bold group transition-all duration-300 transform hover:scale-105 shadow-lg">
+              <Button
+                onClick={() =>
+                  window.open(
+                    "https://wa.me/2348055369750?text=Hi! I would like to book a room at Hotel Helen.",
+                    "_blank"
+                  )
+                }
+                className="bg-amber-600 hover:bg-amber-700 text-white px-8 sm:px-12 py-4 sm:py-6 text-lg sm:text-xl font-bold group transition-all duration-300 transform hover:scale-105 shadow-lg">
                 Book Now
                 <ArrowRight
                   size={20}
